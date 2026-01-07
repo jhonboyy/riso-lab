@@ -1,27 +1,38 @@
-# Jhon Boy Riso Lab
+# sv
 
-Welcome to the Jhon Boy Riso Lab Project Repository. This project is designed to enhance your risography printing process, making it more efficient and streamlined.
+Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
 
-## Overview
+## Creating a project
 
-This software is provided free of charge, extending permission to individuals and organizations aligned with the anti-capitalist principles outlined in the license. Users are empowered to utilize, modify, and distribute the software in accordance with these principles.
+If you're seeing this, you've probably already done this step. Congrats!
 
-## Version Notes (5/1/23)
+```sh
+# create a new project in the current directory
+npx sv create
 
-- **UI Development:** The user interface is still in the process of being defined, mobile version is missing.
-- **Optimal Values:** Exercise caution in using values that may be excessively large.
+# create a new project in my-app
+npx sv create my-app
+```
 
-## Version Notes (2/1/23)
+## Developing
 
-- **Image Upload:** The functionality for image uploads is currently non-operational.
-- **UI Development:** The user interface is still in the process of being defined, mobile version is missing.
-- **Optimal Values:** Exercise caution in using values that may be excessively large.
+Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
 
-## License
+```sh
+npm run dev
 
-This web project is governed by the [Anti-Capitalist License](LICENSE).
+# or start the server and open the app in a new browser tab
+npm run dev -- --open
+```
 
-## Contact
+## Building
 
-- Name: Jhon Boy
-- Email: hello@jhonboy.com
+To create a production version of your app:
+
+```sh
+npm run build
+```
+
+You can preview the production build with `npm run preview`.
+
+> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
