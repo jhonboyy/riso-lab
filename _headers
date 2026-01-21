@@ -1,0 +1,7 @@
+# Cache static assets for a long time
+/immutable/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Cache HTML files for a short time to allow quick updates
+/*
+  Cache-Control: public, max-age=0, must-revalidate
