@@ -1,7 +1,11 @@
-# Cache static assets for a long time
-/immutable/*
-  Cache-Control: public, max-age=31536000, immutable
-
-# Cache HTML files for a short time to allow quick updates
+# Cache HTML and unhashed static assets (like scripts.js or p5.js)
 /*
   Cache-Control: public, max-age=0, must-revalidate
+
+# Aggressive cache for SvelteKit generated immutable assets
+/_app/immutable/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Aggressive cache for static fonts (assuming they don't change often)
+/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
