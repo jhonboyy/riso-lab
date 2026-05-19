@@ -6,6 +6,6 @@
 		type="file"
 		accept="image/*"
 		id="fileInput"
-		on:change={(e) => window.loadImageFromInput(e.target)}
+		onchange={(e) => window.loadImageFromInput(e.target)}
 	/>
 </section>

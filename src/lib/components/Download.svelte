@@ -12,7 +12,7 @@
 
 <section class="download-section">
 	<button
-		on:click={handleDownloadClick}
+		onclick={handleDownloadClick}
 		style="visibility: {isCoverVisible ? 'visible' : 'hidden'}"
 		id="downloadCOVERButton"
 	>
@@ -21,7 +21,7 @@
 
 	<!-- svelte-ignore a11y-click-events-have-key-events -->
 	<button
-		on:click={() => {
+		onclick={() => {
 			handleFileDownload();
 			window.exportLayersAsZIP();
 		}}
@@ -33,7 +33,7 @@
 
 	<!-- svelte-ignore a11y-click-events-have-key-events -->
 	<button
-		on:click={() => {
+		onclick={() => {
 			handleFileDownload();
 			window.downloadAsJPG();
 		}}

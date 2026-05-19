@@ -7,9 +7,9 @@
 			type="text"
 			id="frecuencyRed"
 			value="5"
-			on:blur={() => window.actualizarVariables()}
-			on:change={() => window.actualizarVariables()}
-			on:keydown={(event) => window.checkEnter(event, 'frecuencyRed')}
+			onblur={() => window.actualizarVariables()}
+			onchange={() => window.actualizarVariables()}
+			onkeydown={(event) => window.checkEnter(event, 'frecuencyRed')}
 		/>
 	</div>
 	<div class="item grid">
@@ -17,9 +17,9 @@
 			type="text"
 			id="frecuencyGreen"
 			value="5"
-			on:blur={() => window.actualizarVariables()}
-			on:change={() => window.actualizarVariables()}
-			on:keydown={(event) => window.checkEnter(event, 'frecuencyGreen')}
+			onblur={() => window.actualizarVariables()}
+			onchange={() => window.actualizarVariables()}
+			onkeydown={(event) => window.checkEnter(event, 'frecuencyGreen')}
 		/>
 	</div>
 	<div class="item grid">
@@ -27,9 +27,9 @@
 			type="text"
 			id="frecuencyBlue"
 			value="5"
-			on:blur={() => window.actualizarVariables()}
-			on:change={() => window.actualizarVariables()}
-			on:keydown={(event) => window.checkEnter(event, 'frecuencyBlue')}
+			onblur={() => window.actualizarVariables()}
+			onchange={() => window.actualizarVariables()}
+			onkeydown={(event) => window.checkEnter(event, 'frecuencyBlue')}
 		/>
 	</div>
 	<div class="item grid">
@@ -40,9 +40,9 @@
 			type="text"
 			id="angleRed"
 			value="45"
-			on:blur={() => window.actualizarVariables()}
-			on:change={() => window.actualizarVariables()}
-			on:keydown={(event) => window.checkEnter(event, 'angleRed')}
+			onblur={() => window.actualizarVariables()}
+			onchange={() => window.actualizarVariables()}
+			onkeydown={(event) => window.checkEnter(event, 'angleRed')}
 		/>
 	</div>
 	<div class="item grid">
@@ -50,9 +50,9 @@
 			type="text"
 			id="angleGreen"
 			value="45"
-			on:blur={() => window.actualizarVariables()}
-			on:change={() => window.actualizarVariables()}
-			on:keydown={(event) => window.checkEnter(event, 'angleGreen')}
+			onblur={() => window.actualizarVariables()}
+			onchange={() => window.actualizarVariables()}
+			onkeydown={(event) => window.checkEnter(event, 'angleGreen')}
 		/>
 	</div>
 	<div class="item grid">
@@ -60,9 +60,9 @@
 			type="text"
 			id="angleBlue"
 			value="45"
-			on:blur={() => window.actualizarVariables()}
-			on:change={() => window.actualizarVariables()}
-			on:keydown={(event) => window.checkEnter(event, 'angleBlue')}
+			onblur={() => window.actualizarVariables()}
+			onchange={() => window.actualizarVariables()}
+			onkeydown={(event) => window.checkEnter(event, 'angleBlue')}
 		/>
 	</div>
 	<div class="item grid">
@@ -73,9 +73,9 @@
 			type="text"
 			id="intensityRed"
 			value="127"
-			on:blur={() => window.actualizarVariables()}
-			on:change={() => window.actualizarVariables()}
-			on:keydown={(event) => window.checkEnter(event, 'intensityRed')}
+			onblur={() => window.actualizarVariables()}
+			onchange={() => window.actualizarVariables()}
+			onkeydown={(event) => window.checkEnter(event, 'intensityRed')}
 		/>
 	</div>
 	<div class="item grid">
@@ -83,9 +83,9 @@
 			type="text"
 			id="intensityGreen"
 			value="127"
-			on:blur={() => window.actualizarVariables()}
-			on:change={() => window.actualizarVariables()}
-			on:keydown={(event) => window.checkEnter(event, 'intensityGreen')}
+			onblur={() => window.actualizarVariables()}
+			onchange={() => window.actualizarVariables()}
+			onkeydown={(event) => window.checkEnter(event, 'intensityGreen')}
 		/>
 	</div>
 	<div class="item grid">
@@ -93,9 +93,9 @@
 			type="text"
 			id="intensityBlue"
 			value="127"
-			on:blur={() => window.actualizarVariables()}
-			on:change={() => window.actualizarVariables()}
-			on:keydown={(event) => window.checkEnter(event, 'intensityBlue')}
+			onblur={() => window.actualizarVariables()}
+			onchange={() => window.actualizarVariables()}
+			onkeydown={(event) => window.checkEnter(event, 'intensityBlue')}
 		/>
 	</div>
 </div>
