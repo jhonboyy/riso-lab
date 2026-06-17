@@ -7,3 +7,4 @@ allowBuilds:
 overrides:
   ws: ^8.20.1
   cookie: ^0.7.0
+  esbuild: '>=0.28.1'
