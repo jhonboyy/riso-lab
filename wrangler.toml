@@ -1,3 +1,3 @@
 name = "riso-lab"
-pages_build_output_dir = ".svelte-kit/cloudflare"
-compatibility_date = "2025-01-06"
+pages_build_output_dir = "public"
+compatibility_date = "2025-07-31"

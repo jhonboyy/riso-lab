@@ -1,38 +1,17 @@
 {
 	"name": "riso-lab",
 	"private": true,
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"type": "module",
 	"scripts": {
-		"dev": "vite dev",
-		"build": "vite build",
-		"preview": "vite preview",
-		"prepare": "svelte-kit sync || echo ''",
-		"check": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json",
-		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json --watch",
+		"dev": "serve public",
+		"deploy": "wrangler pages deploy public --project-name riso-lab",
 		"format": "prettier --write .",
 		"lint": "prettier --check ."
 	},
 	"devDependencies": {
-		"@eslint/js": "^9.39.4",
-		"@sveltejs/adapter-auto": "^7.0.1",
-		"@sveltejs/adapter-cloudflare": "^7.2.8",
-		"@sveltejs/kit": "^2.65.1",
-		"@sveltejs/vite-plugin-svelte": "^6.2.4",
-		"@types/node": "^25.9.3",
-		"eslint": "^9.39.4",
-		"eslint-plugin-svelte": "^3.19.0",
-		"globals": "^17.6.0",
 		"prettier": "^3.8.4",
-		"prettier-plugin-svelte": "^3.5.2",
-		"svelte": "^5.56.3",
-		"svelte-check": "^4.6.0",
-		"typescript": "^5.9.3",
-		"vite": "^7.3.5",
-		"wrangler": "^4.100.0",
-		"yaml": "^2.9.0"
-	},
-	"dependencies": {
-		"jspdf": "^4.2.1"
+		"serve": "^14.2.5",
+		"wrangler": "^4.100.0"
 	}
 }

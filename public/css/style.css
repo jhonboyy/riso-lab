@@ -49,14 +49,14 @@ input:focus {
 	outline: none;
 }
 
-input[type="file"] {
+input[type='file'] {
 	color: transparent;
 }
 
 @font-face {
-	font-family: "Favorit";
+	font-family: 'Favorit';
 	font-style: light;
-	src: url("/fonts/ABCFavoritMono-Light.woff") format("woff");
+	src: url('/fonts/ABCFavoritMono-Light.woff') format('woff');
 }
 
 body {
@@ -86,11 +86,10 @@ main {
 	overflow: hidden;
 }
 
-.p5Canvas {
-    width: 95% !important;
-    height: 95% !important;
-    object-fit: contain !important; /* Ajusta la imagen dentro del canvas */
-    visibility: visible !important;
+#mainCanvas {
+	width: 95% !important;
+	height: 95% !important;
+	object-fit: contain !important;
 }
 
 .menu-wrapper {
@@ -112,7 +111,7 @@ main {
 	grid-template-columns: 0.7fr 1fr 1fr 1fr;
 }
 
-.ColursContainer > :nth-child(1) ,
+.ColursContainer > :nth-child(1),
 .PatternContainer > :nth-child(1),
 .ValuesContainer > :nth-child(1),
 .ValuesContainer > :nth-child(5),
@@ -163,7 +162,7 @@ main {
 }
 
 #menuText {
-    padding-left: 2%; 
+	padding-left: 2%;
 	width: 95%;
 }
 
@@ -183,9 +182,9 @@ button {
 	padding: 0;
 	margin: 0;
 	outline: none;
-	color: inherit; 
-	font: inherit;  
-	cursor: pointer; 
+	color: inherit;
+	font: inherit;
+	cursor: pointer;
 	height: 50px;
 }
 
@@ -200,7 +199,7 @@ button {
 	grid-column: 1 / 3;
 	background-color: white;
 }
-  
+
 .download-button {
 	height: max-content;
 	width: max-content;
@@ -215,11 +214,14 @@ button {
 }
 
 @media (max-width: 1250px) {
-
-	p, h1, a, span, input {
+	p,
+	h1,
+	a,
+	span,
+	input {
 		font-size: 1em;
 	}
-	
+
 	body {
 		width: 100vw;
 		height: 100vh;
@@ -301,5 +303,4 @@ button {
 	.download-section {
 		border-top: 0;
 	}
-
 }

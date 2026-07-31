@@ -5,5 +5,7 @@ yarn.lock
 bun.lock
 bun.lockb
 
-# Miscellaneous
-/static/
+# Directories
+node_modules/
+.wrangler/
+fonts/

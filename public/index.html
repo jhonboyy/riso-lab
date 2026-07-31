@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Jhon Boy Riso Lab</title>
+		<link rel="icon" href="/jhon-boy-favicon.svg" type="image/x-icon" />
+		<link rel="stylesheet" href="/css/style.css" />
+	</head>
+	<body>
+		<main>
+			<h1>Jhon Boy Riso Lab</h1>
+
+			<section class="canvas" id="myapp">
+				<label for="fileInput" id="fileButton" class="custom-file-upload">
+					Choose your picture
+				</label>
+				<input style="display: none" type="file" accept="image/*" id="fileInput" />
+				<canvas id="mainCanvas" style="display: none"></canvas>
+			</section>
+
+			<section class="menu-wrapper">
+				<div class="menu">
+					<div class="ColursContainer">
+						<div class="item">
+							<span id="channel" style="cursor: help">Colours</span>
+						</div>
+						<div class="item">
+							<a style="background-color: red; cursor: pointer" id="buttonred">Red</a>
+						</div>
+						<div class="item">
+							<a style="background-color: green; cursor: pointer" id="buttongreen">Green</a>
+						</div>
+						<div class="item">
+							<a style="background-color: blue; cursor: pointer" id="buttonblue">Blue</a>
+						</div>
+					</div>
+
+					<div class="PatternContainer">
+						<div class="item">
+							<span id="patternItem" style="cursor: help">Pattern</span>
+						</div>
+						<div class="item">
+							<a style="cursor: pointer" id="patternRed">Circle</a>
+						</div>
+						<div class="item">
+							<a style="cursor: pointer" id="patternGreen">Circle</a>
+						</div>
+						<div class="item">
+							<a style="cursor: pointer" id="patternBlue">Circle</a>
+						</div>
+					</div>
+
+					<div class="ValuesContainer">
+						<div class="item grid">
+							<span id="frecuencyItem" style="cursor: help">Frecuency</span>
+						</div>
+						<div class="item grid">
+							<input type="text" id="frecuencyRed" value="5" />
+						</div>
+						<div class="item grid">
+							<input type="text" id="frecuencyGreen" value="5" />
+						</div>
+						<div class="item grid">
+							<input type="text" id="frecuencyBlue" value="5" />
+						</div>
+						<div class="item grid">
+							<span id="angleItem" style="cursor: help">Angle</span>
+						</div>
+						<div class="item grid">
+							<input type="text" id="angleRed" value="45" />
+						</div>
+						<div class="item grid">
+							<input type="text" id="angleGreen" value="45" />
+						</div>
+						<div class="item grid">
+							<input type="text" id="angleBlue" value="45" />
+						</div>
+						<div class="item grid">
+							<span id="intensityItem" style="cursor: help">Intensity</span>
+						</div>
+						<div class="item grid">
+							<input type="text" id="intensityRed" value="127" />
+						</div>
+						<div class="item grid">
+							<input type="text" id="intensityGreen" value="127" />
+						</div>
+						<div class="item grid">
+							<input type="text" id="intensityBlue" value="127" />
+						</div>
+					</div>
+				</div>
+
+				<p id="menuText">
+					Welcome to John Boy Riso Lab! With this app, you can submit your own pictures, transform
+					the RGB channels into risograph colors and download them for printing:
+					<br /><br />
+					1. Upload your photo. <br />
+					2. Choose from over 70 colors for the main channels. <br />
+					3. Select a pattern for the risograph texture. <br />
+					4. Play around with and modify the values of the textures. <br />
+					5. Once you're satisfied, click "Download result" to download your model, conveniently
+					divided into layers. <br /><br />
+					Credits: P5.RISO, Dinamo Typefaces.
+				</p>
+			</section>
+
+			<section class="download-section">
+				<button id="downloadCOVERButton" style="visibility: hidden">Download</button>
+
+				<button id="downloadPDFButton" style="visibility: hidden">Layers</button>
+
+				<button id="downloadJPGButton" style="visibility: hidden">Image</button>
+			</section>
+		</main>
+
+		<script type="module" src="/js/app.js"></script>
+	</body>
+</html>
