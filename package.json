@@ -2,7 +2,17 @@
 	"name": "riso-lab",
 	"private": true,
 	"version": "0.0.2",
+	"description": "A browser-based tool to transform photos into risograph-style prints with halftone patterns",
+	"license": "MIT",
 	"type": "module",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/jhonboyy/riso-lab.git"
+	},
+	"homepage": "https://riso-lab.pages.dev",
+	"bugs": {
+		"url": "https://github.com/jhonboyy/riso-lab/issues"
+	},
 	"scripts": {
 		"dev": "serve public",
 		"deploy": "wrangler pages deploy public --project-name riso-lab",
