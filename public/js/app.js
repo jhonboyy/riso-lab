@@ -72,6 +72,7 @@ class RisoLab {
 		this.setupFileInput();
 		this.setupHoverHelp();
 		this.setupClickOutside();
+		this.setupZoomLoupe();
 	}
 
 	buildLayer(layer) {
@@ -318,6 +319,142 @@ class RisoLab {
 				}
 			});
 		});
+	}
+
+	setupZoomLoupe() {
+		const canHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+		const canTouch = navigator.maxTouchPoints > 0;
+		if (!canHover && !canTouch) return;
+
+		const canvasWrap = this.mainCanvas.closest('.canvas');
+		if (!canvasWrap) return;
+
+		const ZOOM_SIZE = 200;
+		const ZOOM_LEVELS = [100, 48, 24];
+		let zoomIndex = 1;
+		let lastX = 0;
+		let lastY = 0;
+		let suppressClick = false;
+
+		const loupe = document.createElement('div');
+		loupe.classList.add('zoom-loupe');
+		loupe.style.display = 'none';
+
+		const zoomCanvas = document.createElement('canvas');
+		zoomCanvas.classList.add('zoom-canvas');
+		zoomCanvas.width = ZOOM_SIZE;
+		zoomCanvas.height = ZOOM_SIZE;
+		loupe.appendChild(zoomCanvas);
+		canvasWrap.appendChild(loupe);
+
+		const zoomCtx = zoomCanvas.getContext('2d');
+
+		const drawLoupe = (clientX, clientY) => {
+			const rect = this.mainCanvas.getBoundingClientRect();
+			const wrapRect = canvasWrap.getBoundingClientRect();
+			const sourceSize = ZOOM_LEVELS[zoomIndex];
+
+			const sx = ((clientX - rect.left) / rect.width) * this.mainCanvas.width;
+			const sy = ((clientY - rect.top) / rect.height) * this.mainCanvas.height;
+
+			zoomCtx.imageSmoothingEnabled = false;
+			zoomCtx.clearRect(0, 0, ZOOM_SIZE, ZOOM_SIZE);
+			zoomCtx.drawImage(
+				this.mainCanvas,
+				sx - sourceSize / 2,
+				sy - sourceSize / 2,
+				sourceSize,
+				sourceSize,
+				0,
+				0,
+				ZOOM_SIZE,
+				ZOOM_SIZE
+			);
+
+			loupe.style.left =
+				Math.min(Math.max(clientX - wrapRect.left - ZOOM_SIZE / 2, 0), wrapRect.width - ZOOM_SIZE) +
+				'px';
+			loupe.style.top =
+				Math.min(Math.max(clientY - wrapRect.top - ZOOM_SIZE / 2, 0), wrapRect.height - ZOOM_SIZE) +
+				'px';
+			loupe.style.display = 'block';
+		};
+
+		const cycleZoom = () => {
+			zoomIndex = (zoomIndex + 1) % ZOOM_LEVELS.length;
+			drawLoupe(lastX, lastY);
+		};
+
+		this.mainCanvas.addEventListener('click', () => {
+			if (suppressClick) {
+				suppressClick = false;
+				return;
+			}
+			cycleZoom();
+		});
+
+		if (canHover) {
+			this.mainCanvas.addEventListener('mousemove', (e) => {
+				lastX = e.clientX;
+				lastY = e.clientY;
+				drawLoupe(e.clientX, e.clientY);
+			});
+
+			this.mainCanvas.addEventListener('mouseleave', () => {
+				loupe.style.display = 'none';
+			});
+		}
+
+		if (canTouch) {
+			canvasWrap.addEventListener('contextmenu', (e) => e.preventDefault());
+
+			let touchTimer = null;
+			let touchStartX = 0;
+			let touchStartY = 0;
+			let loupeActive = false;
+
+			canvasWrap.addEventListener(
+				'touchstart',
+				(e) => {
+					const touch = e.touches[0];
+					touchStartX = touch.clientX;
+					touchStartY = touch.clientY;
+					loupeActive = false;
+					touchTimer = setTimeout(() => {
+						loupeActive = true;
+						lastX = touch.clientX;
+						lastY = touch.clientY;
+						drawLoupe(lastX, lastY);
+					}, 300);
+				},
+				{ passive: true }
+			);
+
+			canvasWrap.addEventListener(
+				'touchmove',
+				(e) => {
+					const touch = e.touches[0];
+					if (loupeActive) {
+						e.preventDefault();
+						lastX = touch.clientX;
+						lastY = touch.clientY;
+						drawLoupe(lastX, lastY);
+					} else if (Math.hypot(touch.clientX - touchStartX, touch.clientY - touchStartY) > 10) {
+						clearTimeout(touchTimer);
+					}
+				},
+				{ passive: false }
+			);
+
+			const endTouch = () => {
+				clearTimeout(touchTimer);
+				if (loupeActive) suppressClick = true;
+				loupeActive = false;
+				loupe.style.display = 'none';
+			};
+			canvasWrap.addEventListener('touchend', endTouch);
+			canvasWrap.addEventListener('touchcancel', endTouch);
+		}
 	}
 
 	loadImage(file) {
