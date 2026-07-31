@@ -230,6 +230,7 @@ button {
 	}
 
 	.canvas {
+		height: auto;
 		border-right: 0;
 	}
 
