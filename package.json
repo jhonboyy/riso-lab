@@ -15,6 +15,7 @@
 	},
 	"scripts": {
 		"dev": "serve public",
+		"build": "echo 'Static site - no build needed'",
 		"deploy": "wrangler pages deploy public --project-name riso-lab",
 		"format": "prettier --write .",
 		"lint": "prettier --check ."
