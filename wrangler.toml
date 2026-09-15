@@ -3,3 +3,9 @@ compatibility_date = "2026-09-15"
 
 [assets]
 directory = "./public"
+
+[observability.logs]
+enabled = true
+invocation_logs = true
+persist = true
+
