@@ -9,14 +9,14 @@
 		"type": "git",
 		"url": "https://github.com/jhonboyy/riso-lab.git"
 	},
-	"homepage": "https://riso-lab.pages.dev",
+	"homepage": "https://riso-lab.workers.dev",
 	"bugs": {
 		"url": "https://github.com/jhonboyy/riso-lab/issues"
 	},
 	"scripts": {
-		"dev": "serve public",
+		"dev": "wrangler dev",
 		"build": "echo 'Static site - no build needed'",
-		"deploy": "wrangler pages deploy public --project-name riso-lab",
+		"deploy": "wrangler deploy",
 		"format": "prettier --write .",
 		"lint": "prettier --check ."
 	},

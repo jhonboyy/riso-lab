@@ -1,3 +1,5 @@
 name = "riso-lab"
-pages_build_output_dir = "public"
-compatibility_date = "2025-07-31"
+compatibility_date = "2026-09-15"
+
+[assets]
+directory = "./public"
